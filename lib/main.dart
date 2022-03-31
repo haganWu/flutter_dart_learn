@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_dart_learn/data_type.dart';
+import 'package:flutter_dart_learn/generic_learn.dart';
 import 'package:flutter_dart_learn/opp_learn.dart';
 
 void main() {
@@ -33,14 +34,17 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    _oopLearn();
+    // _oopLearn();
+    _genericLearn();
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
       ),
       body: Center(
         child: ListView(
-          children: const <Widget>[DataType()],
+          children: const <Widget>[
+            // DataType()
+          ],
         ),
       ),
     );
@@ -53,10 +57,15 @@ class _MyHomePageState extends State<MyHomePage> {
     print(log1 == log2);
 
     //创建Student对象
-    Student student = Student("三一学院", "小小", 18,country: '中国',city: '上海');
+    Student student = Student("三一学院", "小小", 18, country: '中国', city: '上海');
 
     Student stu2 = Student.cover(student);
-    student.school = '985';//set方法
+    student.school = '985'; //set方法
     Student.doPrint(student.toString());
+  }
+
+  void _genericLearn() {
+    TestGeneric tg = TestGeneric();
+    tg.start();
   }
 }

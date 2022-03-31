@@ -27,7 +27,7 @@ class Student extends Person {
   Student(this._school, String name, int age,
       {this.city = "深圳", this.country = "中国"})
       //初始化列表：除了调用父类构造器，在子类构造器方法体之前，可以初始化实例变量，不同的变量之间用逗号分割
-      : name = '$country.$city',
+      : name = '$country-$city-$name',
         //调用父类构造方法：如果父类没有默认的构造方法（无参构造方法），则需要在初始化列表中调用父类的构造方法进行初始化。
         super(name, age) {
     print('构造方法体不是必须的，可以省略');
