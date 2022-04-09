@@ -4,8 +4,10 @@ import 'package:flutter_dart_learn/generic_learn.dart';
 import 'package:flutter_dart_learn/opp_learn.dart';
 import 'package:flutter_dart_learn/plugin_use.dart';
 
+import 'less_group_page.dart';
+
 void main() {
-  runApp(const PluginUse());
+  runApp(const LessGroupPage());
 }
 
 class MyApp extends StatelessWidget {
