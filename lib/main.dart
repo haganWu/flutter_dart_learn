@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_dart_learn/data_type.dart';
 import 'package:flutter_dart_learn/generic_learn.dart';
 import 'package:flutter_dart_learn/opp_learn.dart';
-import 'package:flutter_dart_learn/plugin_use.dart';
-import 'package:flutter_dart_learn/stateful_group_page.dart';
 
-import 'less_group_page.dart';
+import 'flutter_layout_page.dart';
 
 void main() {
-  runApp(const StateFullGroupPage());
+  runApp(const FlutterLayoutPage());
 }
 
 class MyApp extends StatelessWidget {
