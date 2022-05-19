@@ -19,7 +19,15 @@ class _StateFullGroupState extends State<StateFullGroupPage> {
       title: 'StatefulWidget与基础组件',
       theme: ThemeData(primarySwatch: Colors.blue),
       home: Scaffold(
-        appBar: AppBar(title: const Text('StatefulWidget与基础组件')),
+        appBar: AppBar(
+          title: const Text('StatefulWidget与基础组件'),
+          leading: GestureDetector(
+            onTap: () {
+              Navigator.pop(context);
+            },
+            child: const Icon(Icons.arrow_back),
+          ),
+        ),
         bottomNavigationBar: BottomNavigationBar(
             currentIndex: _currentIndex,
             onTap: (index) {

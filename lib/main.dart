@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_dart_learn/generic_learn.dart';
+import 'package:flutter_dart_learn/less_group_page.dart';
 import 'package:flutter_dart_learn/opp_learn.dart';
+import 'package:flutter_dart_learn/plugin_use.dart';
+import 'package:flutter_dart_learn/stateful_group_page.dart';
 
 import 'flutter_layout_page.dart';
 
 void main() {
-  runApp(const FlutterLayoutPage());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -15,58 +18,72 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Dart基础学习',
+      title: 'FlutterDemo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Dart基础学习'),
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text("Flutter路由与导航使用"),
+        ),
+        body: const RootNavigator(),
+      ),
+      routes: <String, WidgetBuilder>{
+        'plugin': (BuildContext context) => const PluginUse(),
+        'less': (BuildContext context) => const LessGroupPage(),
+        'full': (BuildContext context) => const StateFullGroupPage(),
+        'layout': (BuildContext context) => const FlutterLayoutPage(),
+      },
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
-  final String title;
+class RootNavigator extends StatefulWidget {
+  const RootNavigator({Key? key}) : super(key: key);
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<RootNavigator> createState() => _RootNavigatorState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _RootNavigatorState extends State<RootNavigator> {
+  bool jumpByName = false;
+
   @override
   Widget build(BuildContext context) {
-    // _oopLearn();
-    _genericLearn();
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: ListView(
-          children: const <Widget>[
-            // DataType()
-          ],
-        ),
+    return Container(
+      alignment: Alignment.center,
+      child: Column(
+        children: [
+          SwitchListTile(
+              title: Text("${jumpByName ? "" : "不"}通过路由名跳转"),
+              value: jumpByName,
+              onChanged: (value) {
+                setState(() {
+                  jumpByName = value;
+                });
+              }),
+          _item("Plugin使用", const PluginUse(), "plugin"),
+          _item("StatelessWidget与基础组件", const LessGroupPage(), "less"),
+          _item("StatefulWidget与基础组件", const StateFullGroupPage(), "full"),
+          _item("Flutter布局", const FlutterLayoutPage(), "layout"),
+        ],
       ),
     );
   }
 
-  void _oopLearn() {
-    print("--------------OOPLearn-------------------");
-    Logger log1 = Logger();
-    Logger log2 = Logger();
-    print(log1 == log2);
-
-    //创建Student对象
-    Student student = Student("三一学院", "小小", 18, country: '中国', city: '上海');
-
-    Student stu2 = Student.cover(student);
-    student.school = '985'; //set方法
-    Student.doPrint(student.toString());
-  }
-
-  void _genericLearn() {
-    TestGeneric tg = TestGeneric();
-    tg.start();
+  _item(String title, page, String routeName) {
+    return Container(
+      child: ElevatedButton(
+        onPressed: () {
+          if (jumpByName) {
+            Navigator.pushNamed(context, routeName);
+          } else {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => page));
+          }
+        },
+        child: Text(title),
+      ),
+    );
   }
 }

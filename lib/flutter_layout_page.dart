@@ -41,7 +41,15 @@ class _StateFullGroupState extends State<FlutterLayoutPage> {
       title: 'Flutter布局',
       theme: ThemeData(primarySwatch: Colors.blue),
       home: Scaffold(
-        appBar: AppBar(title: const Text('Flutter布局')),
+        appBar: AppBar(
+          title: const Text('Flutter布局'),
+          leading: GestureDetector(
+            onTap: () {
+              Navigator.pop(context);
+            },
+            child: const Icon(Icons.arrow_back),
+          ),
+        ),
         bottomNavigationBar: BottomNavigationBar(
             currentIndex: _currentIndex,
             onTap: (index) {
