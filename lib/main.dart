@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_dart_learn/generic_learn.dart';
 import 'package:flutter_dart_learn/less_group_page.dart';
-import 'package:flutter_dart_learn/opp_learn.dart';
 import 'package:flutter_dart_learn/plugin_use.dart';
 import 'package:flutter_dart_learn/stateful_group_page.dart';
 
 import 'flutter_layout_page.dart';
+import 'gesture_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -33,6 +32,7 @@ class MyApp extends StatelessWidget {
         'less': (BuildContext context) => const LessGroupPage(),
         'full': (BuildContext context) => const StateFullGroupPage(),
         'layout': (BuildContext context) => const FlutterLayoutPage(),
+        'gesture': (BuildContext context) => const GesturePage(),
       },
     );
   }
@@ -66,6 +66,7 @@ class _RootNavigatorState extends State<RootNavigator> {
           _item("StatelessWidget与基础组件", const LessGroupPage(), "less"),
           _item("StatefulWidget与基础组件", const StateFullGroupPage(), "full"),
           _item("Flutter布局", const FlutterLayoutPage(), "layout"),
+          _item("手势操作", const GesturePage(), "gesture"),
         ],
       ),
     );
