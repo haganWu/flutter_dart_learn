@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_dart_learn/less_group_page.dart';
 import 'package:flutter_dart_learn/plugin_use.dart';
+import 'package:flutter_dart_learn/resource_page.dart';
 import 'package:flutter_dart_learn/stateful_group_page.dart';
 
 import 'flutter_layout_page.dart';
@@ -33,6 +34,7 @@ class MyApp extends StatelessWidget {
         'full': (BuildContext context) => const StateFullGroupPage(),
         'layout': (BuildContext context) => const FlutterLayoutPage(),
         'gesture': (BuildContext context) => const GesturePage(),
+        'resource': (BuildContext context) => const ResourcePage(),
       },
     );
   }
@@ -67,6 +69,7 @@ class _RootNavigatorState extends State<RootNavigator> {
           _item("StatefulWidget与基础组件", const StateFullGroupPage(), "full"),
           _item("Flutter布局", const FlutterLayoutPage(), "layout"),
           _item("手势操作", const GesturePage(), "gesture"),
+          _item("资源文件使用", const ResourcePage(), "resource"),
         ],
       ),
     );
