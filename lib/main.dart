@@ -3,6 +3,7 @@ import 'package:flutter_dart_learn/less_group_page.dart';
 import 'package:flutter_dart_learn/plugin_use.dart';
 import 'package:flutter_dart_learn/resource_page.dart';
 import 'package:flutter_dart_learn/stateful_group_page.dart';
+import 'package:flutter_dart_learn/third_app_launcher_page.dart';
 
 import 'flutter_layout_page.dart';
 import 'gesture_page.dart';
@@ -35,6 +36,7 @@ class MyApp extends StatelessWidget {
         'layout': (BuildContext context) => const FlutterLayoutPage(),
         'gesture': (BuildContext context) => const GesturePage(),
         'resource': (BuildContext context) => const ResourcePage(),
+        'launchApp': (BuildContext context) => const ThirdAppLaunchPage(),
       },
     );
   }
@@ -70,6 +72,7 @@ class _RootNavigatorState extends State<RootNavigator> {
           _item("Flutter布局", const FlutterLayoutPage(), "layout"),
           _item("手势操作", const GesturePage(), "gesture"),
           _item("资源文件使用", const ResourcePage(), "resource"),
+          _item("启动第三方App", const ThirdAppLaunchPage(), "launchApp"),
         ],
       ),
     );
