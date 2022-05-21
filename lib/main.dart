@@ -5,6 +5,7 @@ import 'package:flutter_dart_learn/resource_page.dart';
 import 'package:flutter_dart_learn/stateful_group_page.dart';
 import 'package:flutter_dart_learn/third_app_launcher_page.dart';
 
+import 'app_lifecycle.dart';
 import 'flutter_layout_page.dart';
 import 'flutter_widget_lifecycle.dart';
 import 'gesture_page.dart';
@@ -39,6 +40,7 @@ class MyApp extends StatelessWidget {
         'resource': (BuildContext context) => const ResourcePage(),
         'launchApp': (BuildContext context) => const ThirdAppLaunchPage(),
         'lifecycle': (BuildContext context) => const WidgetLifecycle(),
+        'AppLifecycle': (BuildContext context) => const AppLifecycle(),
       },
     );
   }
@@ -76,6 +78,7 @@ class _RootNavigatorState extends State<RootNavigator> {
           _item("资源文件使用", const ResourcePage(), "resource"),
           _item("启动第三方App", const ThirdAppLaunchPage(), "launchApp"),
           _item("生命周期", const WidgetLifecycle(), "lifecycle"),
+          _item("App生命周期", const AppLifecycle(), "AppLifecycle"),
         ],
       ),
     );
