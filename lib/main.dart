@@ -11,25 +11,48 @@ import 'flutter_widget_lifecycle.dart';
 import 'gesture_page.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const DynamicTheme());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class DynamicTheme extends StatefulWidget {
+  const DynamicTheme({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
+  @override
+  _DynamicThemeState createState() => _DynamicThemeState();
+}
+
+class _DynamicThemeState extends State<DynamicTheme> {
+  Brightness _brightness = Brightness.light;
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'FlutterDemo',
       theme: ThemeData(
+        // fontFamily: "RubikMonoOne",
+        brightness: _brightness,
         primarySwatch: Colors.blue,
       ),
       home: Scaffold(
         appBar: AppBar(
           title: const Text("Flutter路由与导航使用"),
         ),
-        body: const RootNavigator(),
+        body: Column(
+          children: [
+            ElevatedButton(
+                onPressed: () {
+                  setState(() {
+                    if (_brightness == Brightness.dark) {
+                      _brightness = Brightness.light;
+                    } else {
+                      _brightness = Brightness.dark;
+                    }
+                  });
+                },
+                child: const Text("切换主题abcd",style: TextStyle(fontFamily: "RubikMonoOne"))),
+            const RootNavigator(),
+          ],
+        ),
       ),
       routes: <String, WidgetBuilder>{
         'plugin': (BuildContext context) => const PluginUse(),
