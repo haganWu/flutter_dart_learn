@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_dart_learn/less_group_page.dart';
+import 'package:flutter_dart_learn/photo_app_page.dart';
 import 'package:flutter_dart_learn/plugin_use.dart';
 import 'package:flutter_dart_learn/resource_page.dart';
 import 'package:flutter_dart_learn/stateful_group_page.dart';
@@ -64,6 +65,7 @@ class _DynamicThemeState extends State<DynamicTheme> {
         'launchApp': (BuildContext context) => const ThirdAppLaunchPage(),
         'lifecycle': (BuildContext context) => const WidgetLifecycle(),
         'AppLifecycle': (BuildContext context) => const AppLifecycle(),
+        'photoApp': (BuildContext context) => const PhotoApp(),
       },
     );
   }
@@ -102,6 +104,7 @@ class _RootNavigatorState extends State<RootNavigator> {
           _item("启动第三方App", const ThirdAppLaunchPage(), "launchApp"),
           _item("生命周期", const WidgetLifecycle(), "lifecycle"),
           _item("App生命周期", const AppLifecycle(), "AppLifecycle"),
+          _item("拍照App", const PhotoApp(), "photoApp"),
         ],
       ),
     );
