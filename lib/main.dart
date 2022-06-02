@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dart_learn/animation_example.dart';
 import 'package:flutter_dart_learn/less_group_page.dart';
 import 'package:flutter_dart_learn/photo_app_page.dart';
 import 'package:flutter_dart_learn/plugin_use.dart';
@@ -66,6 +67,7 @@ class _DynamicThemeState extends State<DynamicTheme> {
         'lifecycle': (BuildContext context) => const WidgetLifecycle(),
         'AppLifecycle': (BuildContext context) => const AppLifecycle(),
         'photoApp': (BuildContext context) => const PhotoApp(),
+        'animationExample': (BuildContext context) => const AnimationExample(),
       },
     );
   }
@@ -105,6 +107,7 @@ class _RootNavigatorState extends State<RootNavigator> {
           _item("生命周期", const WidgetLifecycle(), "lifecycle"),
           _item("App生命周期", const AppLifecycle(), "AppLifecycle"),
           _item("拍照App", const PhotoApp(), "photoApp"),
+          _item("动画", const AnimationExample(), "animationExample"),
         ],
       ),
     );
