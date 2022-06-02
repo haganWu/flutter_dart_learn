@@ -7,6 +7,7 @@ import 'package:flutter_dart_learn/resource_page.dart';
 import 'package:flutter_dart_learn/stateful_group_page.dart';
 import 'package:flutter_dart_learn/third_app_launcher_page.dart';
 
+import 'animated_builder_example.dart';
 import 'animated_widget_example.dart';
 import 'app_lifecycle.dart';
 import 'flutter_layout_page.dart';
@@ -72,6 +73,8 @@ class _DynamicThemeState extends State<DynamicTheme> {
         'animationExample': (BuildContext context) => const AnimationExample(),
         'animatedWidgetExample': (BuildContext context) =>
             const AnimatedWidgetExample(),
+        'animationBuilderExample': (BuildContext context) =>
+            const AnimatedBuilderExample(),
       },
     );
   }
@@ -112,7 +115,10 @@ class _RootNavigatorState extends State<RootNavigator> {
           _item("App生命周期", const AppLifecycle(), "AppLifecycle"),
           _item("拍照App", const PhotoApp(), "photoApp"),
           _item("动画", const AnimationExample(), "animationExample"),
-          _item("动画1", const AnimatedWidgetExample(), "animatedWidgetExample"),
+          _item("动画Widget", const AnimatedWidgetExample(),
+              "animatedWidgetExample"),
+          _item("动画Builder", const AnimatedBuilderExample(),
+              "animationBuilderExample"),
         ],
       ),
     );
