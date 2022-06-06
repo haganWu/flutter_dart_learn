@@ -8,6 +8,7 @@ import 'package:flutter_dart_learn/stateful_group_page.dart';
 import 'package:flutter_dart_learn/third_app_launcher_page.dart';
 
 import 'animated_builder_example.dart';
+import 'animated_hero_example.dart';
 import 'animated_widget_example.dart';
 import 'app_lifecycle.dart';
 import 'flutter_layout_page.dart';
@@ -75,6 +76,7 @@ class _DynamicThemeState extends State<DynamicTheme> {
             const AnimatedWidgetExample(),
         'animationBuilderExample': (BuildContext context) =>
             const AnimatedBuilderExample(),
+        'heroWidget': (BuildContext context) => const HeroAnimation(),
       },
     );
   }
@@ -119,6 +121,7 @@ class _RootNavigatorState extends State<RootNavigator> {
               "animatedWidgetExample"),
           _item("动画Builder", const AnimatedBuilderExample(),
               "animationBuilderExample"),
+          _item("动画Hero", const HeroAnimation(), "heroWidget"),
         ],
       ),
     );
