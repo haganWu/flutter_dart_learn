@@ -78,7 +78,7 @@ class _DynamicThemeState extends State<DynamicTheme> {
         'animationBuilderExample': (BuildContext context) =>
             const AnimatedBuilderExample(),
         'heroWidget': (BuildContext context) => const HeroAnimation(),
-        'heroWidget2': (BuildContext context) => const HeroAnimation2(),
+        'heroWidget2': (BuildContext context) => const RadialExpansionDemo(),
       },
     );
   }
@@ -124,7 +124,7 @@ class _RootNavigatorState extends State<RootNavigator> {
           _item("动画Builder", const AnimatedBuilderExample(),
               "animationBuilderExample"),
           _item("动画Hero", const HeroAnimation(), "heroWidget"),
-          _item("动画Hero2", const HeroAnimation2(), "heroWidget2"),
+          _item("动画Hero2", const RadialExpansionDemo(), "heroWidget2"),
         ],
       ),
     );

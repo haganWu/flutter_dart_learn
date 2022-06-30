@@ -11,7 +11,7 @@ class _AnimationExampleState extends State<AnimationExample>
     with SingleTickerProviderStateMixin {
   late Animation<double> animation;
   late AnimationController controller;
-  late AnimationStatus animationStatus;
+  // late AnimationStatus animationStatus;
   late double animationValue = 0;
 
   @override
@@ -27,7 +27,7 @@ class _AnimationExampleState extends State<AnimationExample>
       })
       ..addStatusListener((status) {
         setState(() {
-          animationStatus = status;
+          // animationStatus = status;
         });
       });
   }
@@ -65,7 +65,7 @@ class _AnimationExampleState extends State<AnimationExample>
                 padding: const EdgeInsets.all(12),
                 child: Column(
                   children: [
-                    Text("status:$animationStatus"),
+                    // Text("status:$animationStatus"),
                     Text("value:$animationValue"),
                   ],
                 )),
